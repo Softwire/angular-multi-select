@@ -582,7 +582,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                 var label   = '';                
 
                 angular.forEach( temp, function( value, key ) {                    
-                    item[ value ] && ( label += '&nbsp;' + value.split( '.' ).reduce( function( prev, current ) {
+                    item[ value ] && ( label += value.split( '.' ).reduce( function( prev, current ) {
                         return prev[ current ]; 
                     }, item ));        
                 });
@@ -950,9 +950,9 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
 
             // configurable button labels                       
             if ( typeof attrs.translation !== 'undefined' ) {
-                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.icon.selectAll  + '&nbsp;&nbsp;' + $scope.translation.selectAll );
-                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.icon.selectNone + '&nbsp;&nbsp;' + $scope.translation.selectNone );
-                $scope.lang.reset           = $sce.trustAsHtml( $scope.icon.reset      + '&nbsp;&nbsp;' + $scope.translation.reset );
+                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.translation.selectAll );
+                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.translation.selectNone );
+                $scope.lang.reset           = $sce.trustAsHtml( $scope.translation.reset );
                 $scope.lang.search          = $scope.translation.search;                
                 $scope.lang.nothingSelected = $sce.trustAsHtml( $scope.translation.nothingSelected );                
             }
